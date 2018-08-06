@@ -93,7 +93,6 @@ void SendPacket(pcap_t* handle, in_addr *target_ip, in_addr *sender_ip,
 void GetTargetMac(char *dev,in_addr *target_ip, in_addr *sender_ip, unsigned char *Host_mac, unsigned char *Sender_mac)
 {
 	char errbuf[PCAP_ERRBUF_SIZE];
-	unsigned char broadcast[7] = "\xff\xff\xff\xff\xff\xff";
 
 	pcap_t* handle = pcap_open_live(dev, BUFSIZ, 1, 1000, errbuf);
 	if (handle == NULL){
